@@ -59,7 +59,10 @@ def generate_pdf(variant='general', output_dir=None):
 def build_all():
     # Clean staging prevents removed variants from lingering in published output.
     out=ROOT/'out'
-    if out.exists(): shutil.rmtree(out)
+    if out.exists():
+        for child in out.iterdir():
+            if child.is_dir() and not child.is_symlink(): shutil.rmtree(child)
+            else: child.unlink()
     manifests=[generate_pdf(name) for name in variants()]
     lines=['# Resume previews','','These files are generated. Edit data/resume.yaml or variants/ in the source branch.','','| Version | Preview | PDF |','|---|---|---|']
     for m in manifests:
