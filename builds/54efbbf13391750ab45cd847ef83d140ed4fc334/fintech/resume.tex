@@ -1,0 +1,71 @@
+% Resume template adapted from Jake Gutierrez / sb2nov (MIT).
+\documentclass[letterpaper,10pt]{article}
+\usepackage[margin=0.4in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec,enumitem,tabularx}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{empty}
+\ifdefined\pdfgentounicode\input{glyphtounicode}\pdfgentounicode=1\fi
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+\setlist[itemize]{leftmargin=12pt,topsep=2pt,itemsep=0pt,parsep=0pt,partopsep=0pt}
+\newcommand{\entry}[4]{\textbf{#1}\hfill\textbf{\small #2}\\\textit{\small #3}\hfill\textit{\small #4}\par}
+\begin{document}
+{\small US \& CAN Citizen}\vspace{-5pt}
+\begin{center}
+{\Huge\scshape Sachin Ved Gupta}\\[4pt]
+{\small 437-217-4947 $|$ \href{mailto:SachinVedGupta@gmail.com}{SachinVedGupta@gmail.com} $|$
+\href{https://linkedin.com/in/Sachin-Ved-Gupta}{linkedin.com/in/Sachin-Ved-Gupta} $|$ \href{https://github.com/SachinVedGupta}{github.com/SachinVedGupta}\\[2pt]\href{https://medium.com/@sachinvgupta9}{medium.com/@SachinVGupta9} $|$ \href{https://sachinvedgupta.com/}{SachinVedGupta.com}}
+\end{center}\vspace{-9pt}
+\section{Education}
+\entry{McMaster University}{September 2023 -- April 2028}{Bachelor of Software Engineering Co-op}{Hamilton, Canada}
+\begin{itemize}\small
+\item GPA: 3.9/4.0, \textbf{Provost's Honour Roll Medal} (perfect 4.0 GPA in 1st year), \textbf{\$10,000} Scholarship (OpenText, Rogers)
+\end{itemize}
+\section{Experience}
+\entry{Software Engineering Intern}{May 2026 -- August 2026}{Microsoft}{Vancouver, Canada}
+\begin{itemize}\small
+\item \textbf{PowerPoint Web}, Performance Team: Cached copilot pane for immediate pop-up during boot so no async layout shift
+\item Ideated and built a swarm of agents that \textbf{act as real users} in varying environments (different: task complexity, RAM, WIFI, aspect-ratio) and auto report bugs, weird shifts, and craft improvements for a more polished PowerPoint UX
+\item Ran the tool concurrently for 7 days, \textbf{detecting 17 optimizations} resulting in 21\% faster boot times and 13 prod fixes
+\end{itemize}\vspace{2pt}
+\entry{Data Science Intern}{January 2026 -- April 2026}{Zipline}{San Francisco Bay Area}
+\begin{itemize}\small
+\item Designed a parameterized \textbf{Site Operations Simulator} modeling order flow, autonomous drone navigation, pickup sequences, and mission completion times to forecast throughput and evaluate infrastructure vs. delivery time tradeoffs
+\item Validated simulation fidelity against real operational data by running K-S tests on distributional metrics
+\item Developed a \textbf{Codex-powered Simulation Skill} that translates Slack business queries (optimal fleet size for X demand?) to JSON configs, runs the simulator, and delivers actionable data-driven insights used by 3 Operations teams
+\end{itemize}\vspace{2pt}
+\entry{Software Engineering Intern}{September 2025 -- December 2025}{Shopify}{Toronto, Canada}
+\begin{itemize}\small
+\item Created a Multi-Tier Caching system (local \textgreater{} remote \textgreater{} bigtable) for \textbf{11x faster filtering} of advertised products
+\item Shipped a debugging tool to detect ``weird" Shop App recommendations and trace their origin in the \textbf{Recs ML pipeline, thus demystifying "why"} they came and enabling fast pain-point resolution (used by 80+ engineers)
+\item Built an LLM-based Relevancy Judge that explains and filters unfitting products; fine-tuned it with Toloka labels and \textbf{distilled it into a 1B param model} for low-latency scoring of 10M+ recs, removing irrelevant items before the feed
+\end{itemize}\vspace{2pt}
+\entry{Machine Learning \& Open Source Lead}{April 2025 -- Present}{\href{https://github.com/DSC-McMaster-U/interface-ai}{Google Developer Student Clubs}}{Hamilton, Canada}
+\begin{itemize}\small
+\item Led a 10-member team building an open-source AI Browser Agent powered by user input, memory, and vision models
+\item Built a perception--planning--action pipeline combining LangGraph intent recognition with a \textbf{fine-tuned Grounding DINO model} trained on UI-to-meaning mappings, improving site understanding and autonomous action accuracy.
+\end{itemize}\vspace{2pt}
+\entry{Machine Learning Lead \& Co-Founder}{January 2025 -- Present}{\href{https://www.macdrones.ca/}{McMaster Aerial Robotics \& Drone Club}}{Hamilton, Canada}
+\begin{itemize}\small
+\item \textbf{Fine-tuned YOLOv11} on a custom balloon/bucket dataset to better identify fire markers (+2.6\% mAP, +4.4\% recall)
+\item Architected a camera-to-NVIDIA Jetson Nano-to-flight controller pipeline and optimized it by deploying a TensorRT object detection model with \textbf{FP8 quantization}, achieving real-time, \textbf{low-latency inference with a 3.2\ensuremath{\times} speedup}
+\item Led a 20-member team across autonomous drone development and Gazebo simulation testing to prepare for SUAS 2026
+\end{itemize}\vspace{2pt}
+\section{Impactful Projects}
+{\small\textbf{\href{https://github.com/SachinVedGupta/nki-llama}{AWS - Llama LLM Inference Optimization Contest}} $|$ \emph{AWS (Neuron Kernel Interface, Trainium EC2), PyTorch, NumPy}}\par
+\begin{itemize}\small
+\item Optimized performance by re-implementing fundamental transformer inferencing operations like Matrix Multiplication and Scaled Dot Product Attention to \textbf{utilize NKI} which is more efficient for the Trainium EC2 chips it's running on
+\item Utilized the benchmarking tool to monitor performance metrics (accuracy, NKI flops, throughput) - \textbf{now 1.13x faster}
+\end{itemize}
+\section{Skills}
+{\small
+\textbf{Programming}: Python, C++, SQL, JavaScript, Linux, Docker, PostgreSQL, CypherQL (Neo4J), Google ADK, LangChain\\[2pt]
+\textbf{Libraries}: PyTorch, TensorFlow, Triton, CUDA, Flask, Pandas, NumPy, Matplotlib, Scikit-Learn, OpenCV, Hugging Face\\[2pt]
+\textbf{Certifications}: \href{https://www.credly.com/badges/1abae0cc-10fb-4b12-9405-22e4bc9e9b71/linked\_in\_profile}{AWS Certified AI Practitioner}, \href{https://www.credly.com/badges/3606867b-332f-46c2-8517-3a97a1b79989/linked\_in\_profile}{AWS Certified Cloud Practitioner}, Nokia Bell Labs - Data Driven 5G\\[2pt]
+\textbf{Highlights}: \href{https://github.com/SachinVedGupta/Miti}{Won HackMIT (1000 competitors)}, \href{https://drive.google.com/drive/folders/1f-G2-GoIchHc\_OHzt8KHu216W8\_KEb4T?usp=sharing}{Ignition Hacks Speaker}, \href{https://medium.com/@sachinvgupta9}{AI articles}, Attended ASPLOS \& ICSE\\[2pt]
+}
+\end{document}

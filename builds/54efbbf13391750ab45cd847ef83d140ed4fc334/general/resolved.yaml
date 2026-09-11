@@ -1,0 +1,122 @@
+name: Sachin Ved Gupta
+citizenship: US & CAN Citizen
+email: SachinVedGupta@gmail.com
+phone: 437-217-4947
+links:
+- label: linkedin.com/in/Sachin-Ved-Gupta
+  url: https://linkedin.com/in/Sachin-Ved-Gupta
+- label: github.com/SachinVedGupta
+  url: https://github.com/SachinVedGupta
+- label: medium.com/@SachinVGupta9
+  url: https://medium.com/@sachinvgupta9
+- label: SachinVedGupta.com
+  url: https://sachinvedgupta.com/
+education:
+- institution: McMaster University
+  dates: September 2023 -- April 2028
+  degree: Bachelor of Software Engineering Co-op
+  location: Hamilton, Canada
+  details:
+  - 'GPA: 3.9/4.0, **Provost’s Honour Roll Medal** (perfect 4.0 GPA in 1st year),
+    **$10,000** Scholarship (OpenText, Rogers)'
+experiences:
+  microsoft:
+    title: Software Engineering Intern
+    dates: May 2026 -- August 2026
+    company: Microsoft
+    location: Vancouver, Canada
+    details:
+    - '**PowerPoint Web**, Performance Team: Cached copilot pane for immediate pop-up
+      during boot so no async layout shift'
+    - 'Ideated and built a swarm of agents that **act as real users** in varying environments
+      (different: task complexity, RAM, WIFI, aspect-ratio) and auto report bugs,
+      weird shifts, and craft improvements for a more polished PowerPoint UX'
+    - Ran the tool concurrently for 7 days, **detecting 17 optimizations** resulting
+      in 21% faster boot times and 13 prod fixes
+    url: ''
+  zipline:
+    title: Data Science Intern
+    dates: January 2026 -- April 2026
+    company: Zipline
+    location: San Francisco Bay Area
+    details:
+    - Designed a parameterized **Site Operations Simulator** modeling order flow,
+      autonomous drone navigation, pickup sequences, and mission completion times
+      to forecast throughput and evaluate infrastructure vs. delivery time tradeoffs
+    - Validated simulation fidelity against real operational data by running K-S tests
+      on distributional metrics
+    - Developed a **Codex-powered Simulation Skill** that translates Slack business
+      queries (optimal fleet size for X demand?) to JSON configs, runs the simulator,
+      and delivers actionable data-driven insights used by 3 Operations teams
+    url: ''
+  shopify:
+    title: Software Engineering Intern
+    dates: September 2025 -- December 2025
+    company: Shopify
+    location: Toronto, Canada
+    details:
+    - Built an LLM-based Relevancy Judge that explains and filters unfitting products;
+      fine-tuned it with Toloka labels and **distilled it into a 1B param model**
+      for low-latency scoring of 10M+ recs, removing irrelevant items before the feed
+    - Shipped a debugging tool to detect “weird" Shop App recommendations and trace
+      their origin in the **Recs ML pipeline, thus demystifying "why"** they came
+      and enabling fast pain-point resolution (used by 80+ engineers)
+    - Created a Multi-Tier Caching system (local > remote > bigtable) for **11x faster
+      filtering** of advertised products
+    url: ''
+  gdsc:
+    title: Machine Learning & Open Source Lead
+    dates: April 2025 -- Present
+    company: Google Developer Student Clubs
+    location: Hamilton, Canada
+    details:
+    - Led a 10-member team building an open-source AI Browser Agent powered by user
+      input, memory, and vision models
+    - Built a perception–planning–action pipeline combining LangGraph intent recognition
+      with a **fine-tuned Grounding DINO model** trained on UI-to-meaning mappings,
+      improving site understanding and autonomous action accuracy.
+    url: https://github.com/DSC-McMaster-U/interface-ai
+  drones:
+    title: Machine Learning Lead & Co-Founder
+    dates: January 2025 -- Present
+    company: McMaster Aerial Robotics & Drone Club
+    location: Hamilton, Canada
+    details:
+    - '**Fine-tuned YOLOv11** on a custom balloon/bucket dataset to better identify
+      fire markers (+2.6% mAP, +4.4% recall)'
+    - Architected a camera-to-NVIDIA Jetson Nano-to-flight controller pipeline and
+      optimized it by deploying a TensorRT object detection model with **FP8 quantization**,
+      achieving real-time, **low-latency inference with a 3.2× speedup**
+    - Led a 20-member team across autonomous drone development and Gazebo simulation
+      testing to prepare for SUAS 2026
+    url: https://www.macdrones.ca/
+projects:
+  nki:
+    title: AWS - Llama LLM Inference Optimization Contest
+    technologies: AWS (Neuron Kernel Interface, Trainium EC2), PyTorch, NumPy
+    details:
+    - Optimized performance by re-implementing fundamental transformer inferencing
+      operations like Matrix Multiplication and Scaled Dot Product Attention to **utilize
+      NKI** which is more efficient for the Trainium EC2 chips it's running on
+    - Utilized the benchmarking tool to monitor performance metrics (accuracy, NKI
+      flops, throughput) - **now 1.13x faster**
+    url: https://github.com/SachinVedGupta/nki-llama
+  learnbridge:
+    title: LearnBridge - AI Agent for Students
+    technologies: Google Agent Development Kit, GCP, Python, Google Classroom & Calendar
+      API
+    details:
+    - Architected **ReAct-based multi-agent workflows** with memory/calender integration
+      for 80% faster course info access
+    url: https://github.com/SachinVedGupta/LearnBridge
+skills:
+  Programming: Python, C++, SQL, JavaScript, Linux, Docker, PostgreSQL, CypherQL (Neo4J),
+    Google ADK, LangChain
+  Libraries: PyTorch, TensorFlow, Triton, CUDA, Flask, Pandas, NumPy, Matplotlib,
+    Scikit-Learn, OpenCV, Hugging Face
+  Certifications: '[AWS Certified AI Practitioner](https://www.credly.com/badges/1abae0cc-10fb-4b12-9405-22e4bc9e9b71/linked_in_profile),
+    [AWS Certified Cloud Practitioner](https://www.credly.com/badges/3606867b-332f-46c2-8517-3a97a1b79989/linked_in_profile),
+    Nokia Bell Labs - Data Driven 5G'
+  Highlights: '[Won HackMIT (1000 competitors)](https://github.com/SachinVedGupta/Miti),
+    [Ignition Hacks Speaker](https://drive.google.com/drive/folders/1f-G2-GoIchHc_OHzt8KHu216W8_KEb4T?usp=sharing),
+    [AI articles](https://medium.com/@sachinvgupta9), Attended ASPLOS & ICSE'
