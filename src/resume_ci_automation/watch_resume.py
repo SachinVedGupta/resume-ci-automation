@@ -18,9 +18,9 @@ PROJECT_ROOT = SRC_DIR.parent
 if __package__ in {None, ""}:
     if str(SRC_DIR) not in sys.path:
         sys.path.insert(0, str(SRC_DIR))
-    from resume_ci_automation.pdf_generator import generate_pdf
+    from resume_ci_automation.pdf_generator import build_all as generate_pdf
 else:
-    from .pdf_generator import generate_pdf
+    from .pdf_generator import build_all as generate_pdf
 
 
 WATCHED_FILES = (
@@ -113,7 +113,7 @@ def wait_for_activity(timeout: float) -> str | None:
 
 def main() -> None:
     stop_requested = False
-    previous_state = snapshot(WATCHED_FILES)
+    previous_state = snapshot((*WATCHED_FILES, *sorted((PROJECT_ROOT / "variants").rglob("*.yaml"))))
     pending_change_at: float | None = None
     last_render_at = 0.0
 
@@ -126,7 +126,7 @@ def main() -> None:
     with raw_terminal_mode():
         render_status("Generating resume once before starting the watcher...")
         build_pdf()
-        previous_state = snapshot(WATCHED_FILES)
+        previous_state = snapshot((*WATCHED_FILES, *sorted((PROJECT_ROOT / "variants").rglob("*.yaml"))))
         render_status("Watching for changes.")
 
         while not stop_requested:
@@ -135,7 +135,7 @@ def main() -> None:
                 stop_requested = True
                 break
 
-            current_state = snapshot(WATCHED_FILES)
+            current_state = snapshot((*WATCHED_FILES, *sorted((PROJECT_ROOT / "variants").rglob("*.yaml"))))
             now = time.monotonic()
 
             if current_state != previous_state:
@@ -154,7 +154,7 @@ def main() -> None:
 
                 render_status("Changes settled; regenerating resume now.")
                 build_pdf()
-                previous_state = snapshot(WATCHED_FILES)
+                previous_state = snapshot((*WATCHED_FILES, *sorted((PROJECT_ROOT / "variants").rglob("*.yaml"))))
                 pending_change_at = None
                 render_status("Watching for changes.")
 

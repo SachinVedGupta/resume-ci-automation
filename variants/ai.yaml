@@ -1,0 +1,6 @@
+# Draft preset: emphasis changes only; review before using.
+label: Applied AI & Agents
+extends: general
+projects:
+- learnbridge
+- nki

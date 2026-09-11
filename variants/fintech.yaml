@@ -1,0 +1,10 @@
+# Draft preset: emphasis changes only; review before using.
+label: Fintech / Systems
+extends: general
+projects:
+- nki
+bullet_order:
+  shopify:
+  - 2
+  - 1
+  - 0

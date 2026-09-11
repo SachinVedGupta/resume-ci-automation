@@ -1,214 +1,59 @@
-%-------------------------
-% Resume in Latex
-% Author : Jake Gutierrez
-% Based off of: https://github.com/sb2nov/resume
-% License : MIT
-%------------------------
-
-\documentclass[letterpaper,11pt]{article}
-
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
+% Resume template adapted from Jake Gutierrez / sb2nov (MIT).
+\documentclass[letterpaper,10pt]{article}
+\usepackage[margin=0.4in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec,enumitem,tabularx}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
-\usepackage{fontawesome5}
-\usepackage[margin=0.42in]{geometry}
-\input{glyphtounicode}
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
-\urlstyle{same}
-
-\raggedbottom
+\pagestyle{empty}
+\ifdefined\pdfgentounicode\input{glyphtounicode}\pdfgentounicode=1\fi
 \raggedright
-\setlength{\tabcolsep}{0in}
-
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-6pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
-
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
-}
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textbf{\textit{\small#3}} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-
-%-------------------------------------------
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+\setlist[itemize]{leftmargin=12pt,topsep=2pt,itemsep=0pt,parsep=0pt,partopsep=0pt}
+\newcommand{\entry}[4]{\textbf{#1}\hfill\textbf{\small #2}\\\textit{\small #3}\hfill\textit{\small #4}\par}
 \begin{document}
-
+{\small <VAR>citizenship | latex_escape</VAR>}\vspace{-5pt}
 \begin{center}
-    \textbf{\Huge \scshape <VAR>name</VAR>} \\ \vspace{1pt}
-    \small \faPhone \enspace <VAR>phone</VAR> $|$
-    \faEnvelope \enspace \href{mailto:<VAR>email</VAR>}{\underline{<VAR>email</VAR>}} $|$ 
-    \faLinkedin \enspace \href{https://linkedin.com/in/<VAR>linkedin</VAR>}{\underline{<VAR>linkedin</VAR>}} $|$
-    \faGithub \enspace \href{https://github.com/<VAR>github</VAR>}{\underline{<VAR>github</VAR>}} $|$
-    \faGlobe \enspace \href{<VAR>website</VAR>}{\underline{<VAR>website</VAR>}}
-\end{center}
-
-
-%-----------EDUCATION-----------
+{\Huge\scshape <VAR>name | latex_escape</VAR>}\\[4pt]
+{\small <VAR>phone | latex_escape</VAR> $|$ \href{<VAR>('mailto:' ~ email) | latex_url</VAR>}{<VAR>email | latex_escape</VAR>} $|$
+<BLOCK>for link in links</BLOCK>
+\href{<VAR>link.url | latex_url</VAR>}{<VAR>link.label | latex_escape</VAR>}<BLOCK>if loop.index == 2</BLOCK>\\[2pt]<BLOCK>elif not loop.last</BLOCK> $|$ <BLOCK>endif</BLOCK>
+<BLOCK>endfor</BLOCK>
+}
+\end{center}\vspace{-9pt}
 \section{Education}
-  <BLOCK>for edu in education</BLOCK>
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {<VAR>edu.institution | latex_escape</VAR>}{<VAR>edu.start_date</VAR> -- <VAR>edu.end_date</VAR>}
-      {<VAR>edu.degree | latex_escape</VAR>}{<VAR>edu.location | latex_escape</VAR>}
-      \resumeItemListStart
-        \resumeItem{<VAR>edu.gpa | latex_escape</VAR>}
-        <BLOCK>if edu.courses</BLOCK>
-        \resumeItem{\textbf{Relevant Coursework:} <BLOCK>for course in edu.courses</BLOCK><VAR>course | latex_escape</VAR><BLOCK>if not loop.last</BLOCK>, <BLOCK>endif</BLOCK><BLOCK>endfor</BLOCK>}
-        <BLOCK>endif</BLOCK>
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-  <BLOCK>endfor</BLOCK>
-
-%-----------EXPERIENCE-----------
+<BLOCK>for edu in education</BLOCK>
+\entry{<VAR>edu.institution | latex_escape</VAR>}{<VAR>edu.dates | latex_escape</VAR>}{<VAR>edu.degree | latex_escape</VAR>}{<VAR>edu.location | latex_escape</VAR>}
+\begin{itemize}\small
+<BLOCK>for detail in edu.details</BLOCK>
+\item <VAR>detail | latex_escape</VAR>
+<BLOCK>endfor</BLOCK>
+\end{itemize}
+<BLOCK>endfor</BLOCK>
 \section{Experience}
-  \resumeSubHeadingListStart
-
-  <BLOCK>for exp in experiences</BLOCK>
-    \resumeSubheading
-      {<VAR>exp.title | latex_escape</VAR>}{<VAR>exp.start_date</VAR> -- <VAR>exp.end_date</VAR>}
-      {<VAR>exp.company | latex_escape</VAR>}{<VAR>exp.location | latex_escape</VAR>}
-      \resumeItemListStart
-        <BLOCK>for detail in exp.details</BLOCK>
-        \resumeItem{<VAR>detail | latex_escape</VAR>}
-        <BLOCK>endfor</BLOCK>
-      \resumeItemListEnd
-    <BLOCK>endfor</BLOCK>
-
-  \resumeSubHeadingListEnd
-
-
-%-----------PROJECTS-----------
-\section{Projects}
-    \resumeSubHeadingListStart
-      <BLOCK>for proj in projects</BLOCK>
-      \resumeProjectHeading
-          {\textbf{<VAR>proj.title | latex_escape</VAR>} $|$ 
-          <BLOCK>if proj.links and 'github' in proj.links</BLOCK>
-           \href{<VAR>proj.links.github</VAR>}{\faGithub}
-          <BLOCK>endif</BLOCK>
-          <BLOCK>if proj.links and 'website' in proj.links</BLOCK>
-           \href{<VAR>proj.links.website</VAR>}{\faGlobe}
-          <BLOCK>endif</BLOCK>
-           $|$ \emph{<BLOCK>for skill in proj.skills</BLOCK><VAR>skill | latex_escape</VAR><BLOCK>if not loop.last</BLOCK>, <BLOCK>endif</BLOCK><BLOCK>endfor</BLOCK>}}{}
-          \resumeItemListStart
-            <BLOCK>for detail in proj.details</BLOCK>
-            \resumeItem{<VAR>detail | latex_escape</VAR>}
-            <BLOCK>endfor</BLOCK>
-          \resumeItemListEnd
-      <BLOCK>endfor</BLOCK>
-    \resumeSubHeadingListEnd
-
-    %-----------Leadership-----------
-\section{Leadership}
-  \resumeSubHeadingListStart
-
-  <BLOCK>for exp in extra_curriculars</BLOCK>
-    \resumeSubheading
-      {<VAR>exp.position | latex_escape</VAR>}{<VAR>exp.start_date</VAR> -- <VAR>exp.end_date</VAR>}
-      {<VAR>exp.organization | latex_escape</VAR>}{<VAR>exp.location | latex_escape</VAR>}
-      \resumeItemListStart
-        <BLOCK>for detail in exp.details</BLOCK>
-        \resumeItem{<VAR>detail | latex_escape</VAR>}
-        <BLOCK>endfor</BLOCK>
-      \resumeItemListEnd
-    <BLOCK>endfor</BLOCK>
-
-  \resumeSubHeadingListEnd
-
-
-
-%
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
- \begin{itemize}[leftmargin=0.0in, label={}]
-    \small{\item{
-        \textbf{Languages}{: <BLOCK>for item in skills.languages</BLOCK><VAR>item | latex_escape</VAR><BLOCK>if not loop.last</BLOCK>, <BLOCK>endif</BLOCK><BLOCK>endfor</BLOCK>} \\
-        \textbf{Frameworks}{: <BLOCK>for item in skills.frameworks</BLOCK><VAR>item | latex_escape</VAR><BLOCK>if not loop.last</BLOCK>, <BLOCK>endif</BLOCK><BLOCK>endfor</BLOCK>} \\
-        \textbf{Developer Tools}{: <BLOCK>for item in skills.tools</BLOCK><VAR>item | latex_escape</VAR><BLOCK>if not loop.last</BLOCK>, <BLOCK>endif</BLOCK><BLOCK>endfor</BLOCK>} \\
-        \textbf{Libraries}{: <BLOCK>for item in skills.libraries</BLOCK><VAR>item | latex_escape</VAR><BLOCK>if not loop.last</BLOCK>, <BLOCK>endif</BLOCK><BLOCK>endfor</BLOCK>} \\
-        <BLOCK>if skills.hobbies</BLOCK>
-          \textbf{Hobbies}{: <BLOCK>for item in skills.hobbies</BLOCK><VAR>item | latex_escape</VAR><BLOCK>if not loop.last</BLOCK>, <BLOCK>endif</BLOCK><BLOCK>endfor</BLOCK>} \\
-        <BLOCK>endif</BLOCK>
-    }}
- \end{itemize}
-
- %-----------Certifications-----------
-<BLOCK>if certifications</BLOCK>
-\section{Certifications}
-  \begin{itemize}[leftmargin=0.0in, label={}]
-    \small{\item{
-    <BLOCK>for cert in certifications</BLOCK>
-      \textbf{<VAR>cert.name | latex_escape</VAR>} -- \textit{<VAR>cert.issuer | latex_escape</VAR>} \hfill \textit{<VAR>cert.date | latex_escape</VAR>}<BLOCK>if not loop.last</BLOCK> \\ <BLOCK>endif</BLOCK>
-    <BLOCK>endfor</BLOCK>
-    }}
-  \end{itemize}
-<BLOCK>endif</BLOCK>
-
-%-------------------------------------------
+<BLOCK>for id, exp in experiences.items()</BLOCK>
+\entry{<VAR>exp.title | latex_escape</VAR>}{<VAR>exp.dates | latex_escape</VAR>}{<BLOCK>if exp.url</BLOCK>\href{<VAR>exp.url | latex_url</VAR>}{<VAR>exp.company | latex_escape</VAR>}<BLOCK>else</BLOCK><VAR>exp.company | latex_escape</VAR><BLOCK>endif</BLOCK>}{<VAR>exp.location | latex_escape</VAR>}
+\begin{itemize}\small
+<BLOCK>for detail in exp.details</BLOCK>
+\item <VAR>detail | latex_escape</VAR>
+<BLOCK>endfor</BLOCK>
+\end{itemize}\vspace{2pt}
+<BLOCK>endfor</BLOCK>
+\section{Impactful Projects}
+<BLOCK>for id, proj in projects.items()</BLOCK>
+{\small\textbf{<BLOCK>if proj.url</BLOCK>\href{<VAR>proj.url | latex_url</VAR>}{<VAR>proj.title | latex_escape</VAR>}<BLOCK>else</BLOCK><VAR>proj.title | latex_escape</VAR><BLOCK>endif</BLOCK>} $|$ \emph{<VAR>proj.technologies | latex_escape</VAR>}}\par
+\begin{itemize}\small
+<BLOCK>for detail in proj.details</BLOCK>
+\item <VAR>detail | latex_escape</VAR>
+<BLOCK>endfor</BLOCK>
+\end{itemize}
+<BLOCK>endfor</BLOCK>
+\section{Skills}
+{\small
+<BLOCK>for category, value in skills.items()</BLOCK>
+\textbf{<VAR>category | latex_escape</VAR>}: <VAR>value | latex_escape</VAR>\\[2pt]
+<BLOCK>endfor</BLOCK>
+}
 \end{document}

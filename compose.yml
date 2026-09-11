@@ -3,5 +3,6 @@ services:
     build: .
     volumes:
       - ./data:/app/data:ro
+      - ./variants:/app/variants:ro
       - ./templates:/app/templates:ro
       - ./out:/app/out

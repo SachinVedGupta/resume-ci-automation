@@ -1,0 +1,8 @@
+# Draft preset: emphasis changes only; review before using.
+label: Software Engineering
+extends: general
+bullet_order:
+  shopify:
+  - 2
+  - 1
+  - 0

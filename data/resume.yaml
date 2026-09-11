@@ -1,163 +1,116 @@
-name: Aditya Rao
-email: raoa32@mcmaster.ca
-phone: 647-978-3730
-linkedin: in/adityarao2005
-github: adityarao2005
-website: adityarao-portfolio.vercel.app
+# Shared source. Plain text; **bold** and [label](https://url) supported.
+name: Sachin Ved Gupta
+citizenship: US & CAN Citizen
+phone: 437-217-4947
+email: SachinVedGupta@gmail.com
+links:
+- label: linkedin.com/in/Sachin-Ved-Gupta
+  url: https://linkedin.com/in/Sachin-Ved-Gupta
+- label: github.com/SachinVedGupta
+  url: https://github.com/SachinVedGupta
+- label: medium.com/@SachinVGupta9
+  url: https://medium.com/@sachinvgupta9
+- label: SachinVedGupta.com
+  url: https://sachinvedgupta.com/
 education:
-  - degree: B.Eng in Software Engineering (CO-OP)
-    institution: McMaster University
-    location: Hamilton, ON
-    graduation_date: Apr 2028
-    start_date: Sep 2023
-    end_date: Apr 2028 (Expected)
-    gpa: "**3.91/4.00 CGPA** - Dean's Honour List"
-    courses:
-      - Data Structures and Algorithms
-      - Intro to Software Design
-      - Concurrent Systems Design
-      - Software Requirements
-      - Large System Design
-      - Computer Architecture
-      - Software Testing
-      - Databases
+- institution: McMaster University
+  dates: September 2023 -- April 2028
+  degree: Bachelor of Software Engineering Co-op
+  location: Hamilton, Canada
+  details:
+  - 'GPA: 3.9/4.0, **Provost’s Honour Roll Medal** (perfect 4.0 GPA in 1st year), **$10,000** Scholarship (OpenText,
+    Rogers)'
 experiences:
-  - title: Software Developer Intern
-    company: IBM
-    start_date: May 2025
-    end_date: Aug 2026
-    location: Markham, ON
+  microsoft:
+    title: Software Engineering Intern
+    dates: May 2026 -- August 2026
+    company: Microsoft
+    location: Vancouver, Canada
     details:
-      - Developed an AI tool for Liberty build failures, automating root-cause log classification to save **~4 hours per break**.
-      - Modernized legacy tools for **400+ developers** into **Java 21** microservices (Spring Boot, Next.js, Jakarta EE 11), cutting publish times from **~2 hours to <1 min** via **Kafka messaging**.
-      - Engineered a work-distribution tracking platform in **Next.js**, **Quarkus**, and **PostgreSQL**, replacing manual Kaizen spreadsheets to save **~1 hr/wk per manager**.
-      - Refactored **20+ legacy FAT test suites** into modular **JUnit** frameworks to improve WebSphere CI/CD reliability.
-      - Contributed 27 PRs (46 commits) to open-source **OpenLiberty** and 2500+ total contributions across **WebSphere Liberty**, **WebSphere Application Server**, and internal L3 Support Tools.
-    skills:
-      - Docker
-      - Java
-      - Jakarta EE
-      - Linux
-      - MicroProfile
-      - WebSphere Application Server
-      - OpenLiberty
-      - WebSphere Liberty
-      - Functional Acceptance Testing
-      - React.js
-      - Python
-      - Modernization
-      - Legacy Modernization
-      - Spring Boot
-      - OpenShift
-      - Kubernetes
-      - Java EE
-      - zOS
-  - title: Full Stack Developer Intern
-    company: Medium AI
-    links:
-      link: https://theforge.mcmaster.ca/startups/medium-ai/
-    start_date: May 2024
-    end_date: Aug 2024
-    location: Hamilton, ON
+    - '**PowerPoint Web**, Performance Team: Cached copilot pane for immediate pop-up during boot so no async
+      layout shift'
+    - 'Ideated and built a swarm of agents that **act as real users** in varying environments (different: task
+      complexity, RAM, WIFI, aspect-ratio) and auto report bugs, weird shifts, and craft improvements for a
+      more polished PowerPoint UX'
+    - Ran the tool concurrently for 7 days, **detecting 17 optimizations** resulting in 21% faster boot times
+      and 13 prod fixes
+  zipline:
+    title: Data Science Intern
+    dates: January 2026 -- April 2026
+    company: Zipline
+    location: San Francisco Bay Area
     details:
-      - Engineered real-time doctor-patient voice-based transcription with **gRPC** and **Firebase**, achieving **sub-500ms streaming latency** by load balancing **OpenAI Whisper**.
-      - Integrated **AI diagnostic hooks** to analyze transcripts, highlighting clinical insights for attending physicians.
-    skills:
-      - React
-      - Linux
-      - TypeScript
-      - gRPC
-      - Python
-      - OpenAI Whisper
-      - FFmpeg
-      - Socket.IO
-      - Web APIs
-      - Firebase
+    - Designed a parameterized **Site Operations Simulator** modeling order flow, autonomous drone navigation,
+      pickup sequences, and mission completion times to forecast throughput and evaluate infrastructure vs.
+      delivery time tradeoffs
+    - Validated simulation fidelity against real operational data by running K-S tests on distributional metrics
+    - Developed a **Codex-powered Simulation Skill** that translates Slack business queries (optimal fleet
+      size for X demand?) to JSON configs, runs the simulator, and delivers actionable data-driven insights
+      used by 3 Operations teams
+  shopify:
+    title: Software Engineering Intern
+    dates: September 2025 -- December 2025
+    company: Shopify
+    location: Toronto, Canada
+    details:
+    - Built an LLM-based Relevancy Judge that explains and filters unfitting products; fine-tuned it with Toloka
+      labels and **distilled it into a 1B param model** for low-latency scoring of 10M+ recs, removing irrelevant
+      items before the feed
+    - Shipped a debugging tool to detect “weird" Shop App recommendations and trace their origin in the **Recs
+      ML pipeline, thus demystifying "why"** they came and enabling fast pain-point resolution (used by 80+
+      engineers)
+    - Created a Multi-Tier Caching system (local > remote > bigtable) for **11x faster filtering** of advertised
+      products
+  gdsc:
+    title: Machine Learning & Open Source Lead
+    dates: April 2025 -- Present
+    company: Google Developer Student Clubs
+    location: Hamilton, Canada
+    details:
+    - Led a 10-member team building an open-source AI Browser Agent powered by user input, memory, and vision
+      models
+    - Built a perception–planning–action pipeline combining LangGraph intent recognition with a **fine-tuned
+      Grounding DINO model** trained on UI-to-meaning mappings, improving site understanding and autonomous
+      action accuracy.
+    url: https://github.com/DSC-McMaster-U/interface-ai
+  drones:
+    title: Machine Learning Lead & Co-Founder
+    dates: January 2025 -- Present
+    company: McMaster Aerial Robotics & Drone Club
+    location: Hamilton, Canada
+    details:
+    - '**Fine-tuned YOLOv11** on a custom balloon/bucket dataset to better identify fire markers (+2.6% mAP,
+      +4.4% recall)'
+    - Architected a camera-to-NVIDIA Jetson Nano-to-flight controller pipeline and optimized it by deploying
+      a TensorRT object detection model with **FP8 quantization**, achieving real-time, **low-latency inference
+      with a 3.2× speedup**
+    - Led a 20-member team across autonomous drone development and Gazebo simulation testing to prepare for
+      SUAS 2026
+    url: https://www.macdrones.ca/
 projects:
-  - title: BYoAI Deployment Platform
-    start_date: May 2026
-    end_date: Present
-    links:
-      github: https://github.com/adityarao2005/BYoAI-Deployment-Platform
+  nki:
+    title: AWS - Llama LLM Inference Optimization Contest
+    url: https://github.com/SachinVedGupta/nki-llama
+    technologies: AWS (Neuron Kernel Interface, Trainium EC2), PyTorch, NumPy
     details:
-      - Engineered an AI agent orchestration platform in **Go** and **TypeScript** with tool-calling and observability.
-      - Containerized an execution engine with **Docker** for dynamic worker allocation, security isolation, and pluggable storage.
-      - Designed a multi-provider **LLM abstraction** supporting frontier and self-hosted models.
-    skills:
-      - Go
-      - TypeScript
-      - Docker
-      - MCP
-      - OpenTelemetry
-  - title: WebCraft
-    start_date: Apr 2025
-    end_date: Sept 2025
-    links:
-      github: https://github.com/adityarao2005/WebCraft
+    - Optimized performance by re-implementing fundamental transformer inferencing operations like Matrix Multiplication
+      and Scaled Dot Product Attention to **utilize NKI** which is more efficient for the Trainium EC2 chips
+      it's running on
+    - Utilized the benchmarking tool to monitor performance metrics (accuracy, NKI flops, throughput) - **now
+      1.13x faster**
+  learnbridge:
+    title: LearnBridge - AI Agent for Students
+    url: https://github.com/SachinVedGupta/LearnBridge
+    technologies: Google Agent Development Kit, GCP, Python, Google Classroom & Calendar API
     details:
-      - Authored an asynchronous library in **C++23** featuring coroutine task management, asynchronous timers, task scheduling, and high-performance file and socket (TCP and UDP) I/O modules.
-      - Automated testing and release workflows using **gtest (130+ tests)**, **GitHub Actions CI/CD** (Linux, Windows, macOS), and published a custom **vcpkg port**.
-    skills:
-      - C++
-      - CMake
-      - Vcpkg
-      - Asynchronous Programming
-      - Github Actions
-  - title: Resume Builder
-    start_date: Aug 2024
-    end_date: Feb 2025
-    links:
-      github: https://github.com/adityarao2005/resume-builder
-    details:
-      - Built an AI resume builder with **Next.js**, **Spring Boot**, and **FastAPI** for real-time editing and version control.
-      - Integrated **LangChain** to automate ATS keyword optimization, intelligent scoring, and template tailoring.
-    skills:
-      - Java
-      - Spring Boot
-      - Next.js
-      - Typescript
-      - Python
-      - FastAPI
-      - LangChain
-      - Docker
-extra_curriculars:
-  - position: Sys-Admin and Fullstack Developer Executive
-    organization: IEEE McMaster Student Branch
-    start_date: Nov 2024
-    end_date: Present
-    location: Hamilton, ON
-    details:
-      - Set up an **RPi 3B+ cluster** handling up to 100 concurrent clients with **<50ms response latency**.
-      - Provisioned **CI/CD pipelines** to build and deploy container images to a **Kubernetes cluster**.
-      - Developed the IEEE branch website using **Next.js** with GitHub Projects/Issues as an admin CMS.
+    - Architected **ReAct-based multi-agent workflows** with memory/calender integration for 80% faster course
+      info access
 skills:
-  languages:
-    - Java
-    - JavaScript/TypeScript
-    - Python
-    - C#
-    - C++
-    - Golang
-    - SQL
-    - C
-    - Verilog
-  frameworks:
-    - Spring Boot
-    - Jakarta EE
-    - MicroProfile
-    - Quarkus
-    - Hibernate
-    - Express
-    - Next.js
-    - FastAPI
-    - Flask
-  tools:
-    - AWS
-    - GCP
-    - Git
-    - Docker
-    - Kafka
-    - OpenShift
-    - Kubernetes
-    - Redis
-    - Infinispan
+  Programming: Python, C++, SQL, JavaScript, Linux, Docker, PostgreSQL, CypherQL (Neo4J), Google ADK, LangChain
+  Libraries: PyTorch, TensorFlow, Triton, CUDA, Flask, Pandas, NumPy, Matplotlib, Scikit-Learn, OpenCV, Hugging
+    Face
+  Certifications: '[AWS Certified AI Practitioner](https://www.credly.com/badges/1abae0cc-10fb-4b12-9405-22e4bc9e9b71/linked_in_profile),
+    [AWS Certified Cloud Practitioner](https://www.credly.com/badges/3606867b-332f-46c2-8517-3a97a1b79989/linked_in_profile),
+    Nokia Bell Labs - Data Driven 5G'
+  Highlights: '[Won HackMIT (1000 competitors)](https://github.com/SachinVedGupta/Miti), [Ignition Hacks Speaker](https://drive.google.com/drive/folders/1f-G2-GoIchHc_OHzt8KHu216W8_KEb4T?usp=sharing),
+    [AI articles](https://medium.com/@sachinvgupta9), Attended ASPLOS & ICSE'

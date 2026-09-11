@@ -1,0 +1,8 @@
+# Draft preset: emphasis changes only; review before using.
+label: Machine Learning
+extends: general
+bullet_order:
+  microsoft:
+  - 1
+  - 2
+  - 0

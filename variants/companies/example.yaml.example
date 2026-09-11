@@ -1,0 +1,11 @@
+# Copy to variants/companies/acme-swe.yaml (remove .example).
+label: Acme — Software Engineering
+extends: swe
+# Optional: choose/reorder projects by stable ID.
+projects: [nki, learnbridge]
+# Optional: replace only the fields below, preserving other shared content.
+overrides:
+  experiences:
+    microsoft:
+      details:
+        - "Replace with a truthful company-specific bullet grounded in your shared resume."
