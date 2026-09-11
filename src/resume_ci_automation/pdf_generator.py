@@ -6,6 +6,7 @@ from pathlib import Path
 import shutil
 import subprocess
 import tempfile
+from urllib.parse import quote
 import fitz
 import yaml
 from .latex_generator import ROOT, generate_latex_resume, resolve_resume, variant_path
@@ -52,20 +53,33 @@ def generate_pdf(variant='general', output_dir=None):
         (tmp/'resolved.yaml').write_text(yaml.safe_dump(data,sort_keys=False,allow_unicode=True))
         for file in ('resume.pdf','resume.tex','preview.png','resume.txt','manifest.json','resolved.yaml'):
             shutil.copy2(tmp/file,out/file)
-    (out/'README.md').write_text(f'# {label}\n\nSource commit: `{source}`\n\n[Download PDF](resume.pdf) · [Resolved YAML](resolved.yaml)\n\n![Resume preview](preview.png)\n')
+    repo = os.environ.get('GITHUB_REPOSITORY', 'SachinVedGupta/resume-ci-automation')
+    ref = quote(os.environ.get('SOURCE_REF', 'main'), safe='')
+    edit_base = f'https://github.com/{repo}/edit/{ref}'
+    edit_links = f'[Edit shared resume]({edit_base}/data/resume.yaml) · [Edit this variant]({edit_base}/variants/{variant}.yaml)'
+    (out/'README.md').write_text(f'# {label}\n\nSource commit: `{source}`\n\n[Download PDF](resume.pdf) · [Resolved YAML](resolved.yaml)\n\n{edit_links}\n\n![Resume preview](preview.png)\n')
     print(f'{variant}: one page, text verified → {out / "resume.pdf"}')
     return manifest
 
 def build_all():
-    # Clean staging prevents removed variants from lingering in published output.
-    out=ROOT/'out'
-    if out.exists():
+    # Only replace the last successful set after every variant has passed.
+    # Keep the out directory itself intact so Docker bind mounts work.
+    out = ROOT/'out'
+    with tempfile.TemporaryDirectory(prefix='resume-build-') as staging:
+        staging = Path(staging)
+        manifests = [generate_pdf(name, staging/name) for name in variants()]
+        lines = ['# Resume previews', '',
+                 'These files are generated. Edit data/resume.yaml or variants/ in the source branch.', '',
+                 '| Version | Preview | PDF |', '|---|---|---|']
+        for manifest in manifests:
+            name = manifest['variant']
+            label = manifest['label'].replace('|', r'\|').replace('\n', ' ')
+            lines.append(f'| {label} | [View]({name}/README.md) | [PDF]({name}/resume.pdf) |')
+        (staging/'README.md').write_text('\n'.join(lines)+'\n')
+        out.mkdir(exist_ok=True)
         for child in out.iterdir():
             if child.is_dir() and not child.is_symlink(): shutil.rmtree(child)
             else: child.unlink()
-    manifests=[generate_pdf(name) for name in variants()]
-    lines=['# Resume previews','','These files are generated. Edit data/resume.yaml or variants/ in the source branch.','','| Version | Preview | PDF |','|---|---|---|']
-    for m in manifests:
-        name=m['variant'];lines.append(f'| {m["label"]} | [View]({name}/README.md) | [PDF]({name}/resume.pdf) |')
-    (out/'README.md').write_text('\n'.join(lines)+'\n')
+        shutil.copytree(staging, out, dirs_exist_ok=True)
+    print(f'All previews saved to {out}')
     return manifests

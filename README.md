@@ -10,7 +10,7 @@ Edit YAML → commit → view the generated resume in GitHub.
 2. Click **Commit changes**. Commit to `main` for an ordinary update, or choose a new branch and pull request to review a larger change.
 3. Open **Actions → Build Resume** and wait for both jobs to turn green. Open **View all previews** above, choose a version, and see its inline image or PDF. The preview README displays the source commit so you can check it matches your edit.
 
-A failed build leaves the last successful preview intact. Read the error in Actions, fix the YAML or shorten the content, and commit again. A preview is generated after a commit, not while typing in GitHub's editor.
+A failed build leaves the last successful preview intact, including during local editing. Each generated preview also has direct links to edit the shared resume or its variant. Read the error in Actions, fix the YAML or shorten the content, and commit again. A preview is generated after a commit, not while typing in GitHub's editor.
 
 ## Versions without duplicating your whole resume
 
