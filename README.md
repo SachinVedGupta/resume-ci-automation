@@ -4,10 +4,10 @@ These files are generated. Edit data/resume.yaml or variants/ in the source bran
 
 | Version | Preview | PDF |
 |---|---|---|
-| Applied AI & Agents | [View](builds/54efbbf13391750ab45cd847ef83d140ed4fc334/ai/README.md) | [PDF](builds/54efbbf13391750ab45cd847ef83d140ed4fc334/ai/resume.pdf) |
-| Fintech / Systems | [View](builds/54efbbf13391750ab45cd847ef83d140ed4fc334/fintech/README.md) | [PDF](builds/54efbbf13391750ab45cd847ef83d140ed4fc334/fintech/resume.pdf) |
-| General | [View](builds/54efbbf13391750ab45cd847ef83d140ed4fc334/general/README.md) | [PDF](builds/54efbbf13391750ab45cd847ef83d140ed4fc334/general/resume.pdf) |
-| Machine Learning | [View](builds/54efbbf13391750ab45cd847ef83d140ed4fc334/ml/README.md) | [PDF](builds/54efbbf13391750ab45cd847ef83d140ed4fc334/ml/resume.pdf) |
-| Software Engineering | [View](builds/54efbbf13391750ab45cd847ef83d140ed4fc334/swe/README.md) | [PDF](builds/54efbbf13391750ab45cd847ef83d140ed4fc334/swe/resume.pdf) |
+| Applied AI & Agents | [View](builds/eedc6b7c17cac9e4976362f9f6d14fd39ba8c3f2/ai/README.md) | [PDF](builds/eedc6b7c17cac9e4976362f9f6d14fd39ba8c3f2/ai/resume.pdf) |
+| Fintech / Systems | [View](builds/eedc6b7c17cac9e4976362f9f6d14fd39ba8c3f2/fintech/README.md) | [PDF](builds/eedc6b7c17cac9e4976362f9f6d14fd39ba8c3f2/fintech/resume.pdf) |
+| General | [View](builds/eedc6b7c17cac9e4976362f9f6d14fd39ba8c3f2/general/README.md) | [PDF](builds/eedc6b7c17cac9e4976362f9f6d14fd39ba8c3f2/general/resume.pdf) |
+| Machine Learning | [View](builds/eedc6b7c17cac9e4976362f9f6d14fd39ba8c3f2/ml/README.md) | [PDF](builds/eedc6b7c17cac9e4976362f9f6d14fd39ba8c3f2/ml/resume.pdf) |
+| Software Engineering | [View](builds/eedc6b7c17cac9e4976362f9f6d14fd39ba8c3f2/swe/README.md) | [PDF](builds/eedc6b7c17cac9e4976362f9f6d14fd39ba8c3f2/swe/resume.pdf) |
 
-Source commit: `54efbbf13391750ab45cd847ef83d140ed4fc334`
+Source commit: `eedc6b7c17cac9e4976362f9f6d14fd39ba8c3f2`
